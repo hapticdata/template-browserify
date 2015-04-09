@@ -1,0 +1,32 @@
+{
+  "name": "template",
+  "version": "0.0.0",
+  "description": "",
+  "main": "javascripts/index.js",
+  "browserify": {
+    "transform": [
+      [
+        "jadeify",
+        {
+          "compileDebug": true,
+          "pretty": true
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Phillips <kyle@haptic-data.com> (http://hapticdata.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^3.6.0",
+    "jade": "^1.9.2",
+    "browserify": "^9.0.7",
+    "jadeify": "^4.1.0",
+    "animitter": "^0.5.0"
+  },
+  "devDependencies": {
+    "watchify": "^3.1.0"
+  }
+}

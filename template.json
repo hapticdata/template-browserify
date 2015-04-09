@@ -1,0 +1,7 @@
+{
+	"name": "browserify",
+	"version": "0.0.0",
+	"author": "Kyle Phillips <kyle@haptic-data.com>",
+	"description": "basic template for working with browserify",
+	"fetch": {}
+}
