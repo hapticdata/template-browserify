@@ -11,7 +11,7 @@ gulp.task('scripts', function(){
     return gulp.src('javascripts/index.js')
         .pipe(browserify({ debug: true }))
         .on('error', gutil.log)
-        .pipe(gulp.dest('public/javascripts'));
+        .pipe(gulp.dest('public'));
 });
 
 gulp.task('connect', function(){

@@ -32,6 +32,7 @@
     "animitter": "^0.5.0"
   },
   "devDependencies": {
-    "watchify": "^3.1.0"
+    "watchify": "^3.1.0",
+    "aliasify": "^1.7.2"
   }
 }
