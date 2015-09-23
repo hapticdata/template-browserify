@@ -1,5 +1,8 @@
 extends ../layout
 
 block content
-  h1= title
-  p text rendered from views/index.jade 
+    h1= title
+    p text rendered from views/index.jade
+
+block scripts
+    script(src="index.js")
