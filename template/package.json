@@ -15,7 +15,15 @@
     ]
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify javascripts/index.js > public/bundle.js",
+    "copy": "rimraf public/assets/ && ncp assets/ public/assets",
+    "copy-watch": "watch \"npm run copy\" assets/ --wait=3 --ignoreDotFiles",
+    "budo": "budo javascripts/index.js:bundle.js --port=3000 --live -v --dir=public | garnish",
+    "jade": "jade views/pages/ --out public/ --obj locals.json --pretty",
+    "jade-watch": "jade views/pages/ --out public/ --obj locals.json --pretty --watch",
+    "less-watch": "autoless less/ public/",
+    "less": "lessc less/style.less public/style.css",
+    "watch": "npm run jade && npm run less && concurrent \"npm run copy-watch\" \"npm run jade-watch\" \"npm run budo\" \"npm run less-watch\""
   },
   "author": "Kyle Phillips <kyle@haptic-data.com> (http://hapticdata.com/)",
   "license": "ISC",
@@ -32,6 +40,14 @@
     "animitter": "^0.5.0"
   },
   "devDependencies": {
+    "autoless": "^0.1.7",
+    "budo": "^4.2.1",
+    "concurrently": "^0.1.1",
+    "garnish": "^2.3.0",
+    "less": "^2.5.1",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.4.2",
+    "watch": "^0.16.0",
     "watchify": "^3.1.0"
   }
 }
