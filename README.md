@@ -8,7 +8,7 @@ I had a friend recently start his first web project in several years. He has bee
 In a modern javascript workflow all of your assets are going to go through some sort of a build process: 
 
 1. You will write templates to generate html, 
-2. you will write ES2015 javascript that get built into [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1) modules for javascript and
+2. you will write ES2015 javascript modules that get transpiled into a single built js file with source maps and
 3. you will use a CSS preprocessor such as [Less](http://lesscss.org) for your stylesheets. 
 
 For this reason it is best to create a folder that contains only your resulting files that you will never edit directly and typically not commit into version control. The template I've provided will create a new folder called `public/` for these generated assets. This folder name is easily changed but the decision for "public" was based on the convention of [Express.js](http://expressjs.com).
