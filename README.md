@@ -15,7 +15,7 @@ For this reason it is best to create a folder that contains only your resulting 
 
 ![The resulting project structore](./directory.png)
 
-So lets break down what this template does, I don't use [gulp](http://gulpjs.com/) or [grunt](http://gruntjs.com), I keep my scripts in my [package.json](https://docs.npmjs.com/files/package.json), lets dissect those:
+So lets break down what this template does, I don't use [gulp](http://gulpjs.com/) or [grunt](http://gruntjs.com), I keep my scripts in my [package.json](https://docs.npmjs.com/files/package.json). The only commands you need to remember are `npm run build` and `npm run watch` which composite the other commands, lets dissect these:
 
 ### `npm run build`
 ##### uses [browserify](http://browserify.org/), [babelify](http://babeljs.io) and [babel-preset-es2015](http://babeljs.io/docs/plugins/preset-es2015/)
