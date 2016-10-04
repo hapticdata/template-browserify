@@ -28,7 +28,7 @@ Because we want our `public/` directory to only include files that can be safely
 
 ### `npm run budo`
 ##### uses [budo](https://www.npmjs.com/package/budo), [garnish](https://www.npmjs.com/package/garnish)
-Budo is a great tool for prototyping and built on top of Browserify. Budo will start a local file server to serve the contents of your `public/` directory, it will also watch your `javascripts/` directory for any changes and produce an incremental (fast) build every time files have changed. As a bonus, the `--live` flag provides [LiveReload](http://***) functionality to your project.
+Budo is a great tool for prototyping and built on top of Browserify. Budo will start a local file server to serve the contents of your `public/` directory, it will also watch your `javascripts/` directory for any changes and produce an incremental (fast) build every time files have changed. As a bonus, the `--live` flag provides [LiveReload](http://livereload.com/) functionality to your project.
 
 
 
