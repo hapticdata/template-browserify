@@ -3,12 +3,12 @@
 by [Kyle Phillips](http://haptic-data.com)
 
 
-I had a friend recently start his first web project in several years. He has been busy building great Android apps but was very confused when trying to understand how we build websites these days. He asked if I could help him get set up and explain to him why all of this complexity is necessary. I provided him with [my template that I use](http://github.com/hapticdata/template-browserify) to start most of my _static_ projects. When he asked me to break it down into what all it does and how all of this can be possibly necessary, that is when I realized its complexity and decided to write this post to break it down. **The purpose of this post is to explain to a developer what it means to be working with a modern, javsascript-centric web workflow**.
+I had a friend recently start his first web project in several years. He has been busy building great Android apps but was very confused when trying to understand how we build websites these days. He asked if I could help him get set up and explain to him why all of this complexity is necessary. I provided him with [my template that I use](http://github.com/hapticdata/template-browserify) to start most of my _static_ projects. When he asked me to break it down into what all it does and how all of this can be possibly necessary, that is when I realized its complexity and decided to write this post to break it down. **The purpose of this post is to explain to a developer what it means to be working with a modern, javascript-centric web workflow**.
 
 In a modern javascript workflow all of your assets are going to go through some sort of a build process: 
 
 1. You will write templates to generate html, 
-2. you will write [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1) modules for javascript in ES2015 syntax and 
+2. you will write ES2015 javascript that get built into [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1) modules for javascript and
 3. you will use a CSS preprocessor such as [Less](http://lesscss.org) for your stylesheets. 
 
 For this reason it is best to create a folder that contains only your resulting files that you will never edit directly and typically not commit into version control. The template I've provided will create a new folder called `public/` for these generated assets. This folder name is easily changed but the decision for "public" was based on the convention of [Express.js](http://expressjs.com).
