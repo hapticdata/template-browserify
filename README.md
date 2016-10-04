@@ -116,7 +116,7 @@ Your same templates you are serving can also be bundled into your javascript fil
 
 
 ### Starting Projects Quickly with [Sketchplate](http://haptic-data.com/sketchplate)
-This is my own open-source project, which currently only supports Mac. It is aimed towards starting projects very quickly and promotes maintaining your own templates for re-use. With [Sketchplate]http://github.com/hapticdata/sketchplate) you can get up and running in seconds. Just install the `sketch plate` command globally with `npm install -g sketchplate` then to install any template its as simple as `sketchplate template install <github_user>/<repo>`.
+This is my own open-source project, which currently only supports Mac. It is aimed towards starting projects very quickly and promotes maintaining your own templates for re-use. With [Sketchplate](http://github.com/hapticdata/sketchplate) you can get up and running in seconds. Just install the `sketchplate` command globally with `npm install -g sketchplate` then to install any template its as simple as `sketchplate template install <github_user>/<repo>`.
 
 If this article was _TL;DR_ you can get a new project up and running with this template in the following steps:
 
