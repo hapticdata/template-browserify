@@ -1,24 +1,24 @@
 # A Modern Web Development Workflow
-#### with ES2015 modules, CSS preprocessing and HTML tempting
+#### with ES2015 modules, CSS preprocessing and HTML templating
 by [Kyle Phillips](http://haptic-data.com)
 
 
-I had a friend recently start his first web project in several years. He has been busy building great Android apps but was very confused when trying to understand how we build websites these days. He asked if I could help him get set up and explain to him why all of this complexity is necessary. I provided him with [my template that I use](http://github.com/hapticdata/template-browserify) to start most of my _static_ projects. When he asked me to break it down into what all it does and how all of this can be possibly necessary, that is when I realized its complexity and decided to write this post to break it down. **The purpose of this post is to explain to a developer what it means to be working with a modern, javsascbipt-centric web workflow**.
+I had a friend recently start his first web project in several years. He has been busy building great Android apps but was very confused when trying to understand how we build websites these days. He asked if I could help him get set up and explain to him why all of this complexity is necessary. I provided him with [my template that I use](http://github.com/hapticdata/template-browserify) to start most of my _static_ projects. When he asked me to break it down into what all it does and how all of this can be possibly necessary, that is when I realized its complexity and decided to write this post to break it down. **The purpose of this post is to explain to a developer what it means to be working with a modern, javsascript-centric web workflow**.
 
 In a modern javascript workflow all of your assets are going to go through some sort of a build process: 
 
 1. You will write templates to generate html, 
-2. you will write [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1) modules for javascript and 
+2. you will write [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1) modules for javascript in ES2015 syntax and 
 3. you will use a CSS preprocessor such as [Less](http://lesscss.org) for your stylesheets. 
 
 For this reason it is best to create a folder that contains only your resulting files that you will never edit directly and typically not commit into version control. The template I've provided will create a new folder called `public/` for these generated assets. This folder name is easily changed but the decision for "public" was based on the convention of [Express.js](http://expressjs.com).
 
 ![The resulting project structore](./directory.png)
 
-So lets break down what this template does, I don't use gulp or grunt, I keep my scripts in my [package.json](https://docs.npmjs.com/files/package.json), lets dissect those:
+So lets break down what this template does, I don't use [gulp](http://gulpjs.com/) or [grunt](http://gruntjs.com), I keep my scripts in my [package.json](https://docs.npmjs.com/files/package.json), lets dissect those:
 
 ### `npm run build`
-###### uses [browserify](http://browserify.org/), [babelify](http://babeljs.io) and [babel-preset-es2015](http://babeljs.io/docs/plugins/preset-es2015/)
+##### uses [browserify](http://browserify.org/), [babelify](http://babeljs.io) and [babel-preset-es2015](http://babeljs.io/docs/plugins/preset-es2015/)
 This command will use [browserify](https://github.com/substack/node-browserify) to take all of my javascript files and build them into a single javascript file, external dependencies and my own project files. Browserify has the additional concept of [transforms](https://github.com/substack/module-deps#transforms) and I use [Babelify](https://github.com/babel/babelify) so that I can write [ES2015](https://babeljs.io/docs/learn-es2015/) modules but still support older browsers. As of Babel v6.0 its presets are separated from its core, I typically use the `babel-preset-es2015`, those working with [React.js](http://reactjs.org) will want to use `babel-preset-react`. These transforms are setup [here in my package.json](https://github.com/hapticdata/template-browserify/blob/master/template/package.json#L6) and includes important features such as [source maps](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/).
 
 ### `npm run copy-assets`
@@ -100,22 +100,22 @@ When it comes time to put your site up on a server:
 ## Taking it further
 At this point, you have everything you need for an efficient modern workflow that works on Mac, Linux and Windows and requires no global dependencies other than [Node.js](http://nodejs.org). There is of course always more you can add:
 
-### unit tests with [tape](https://github.com/substack/tape)
+### Unit Tests with [tape](https://github.com/substack/tape)
 Tape is great for unit-tests and it makes it very easy to write tests that can run headless in Node.js as well as in browser. If, for example, you have a `test.js` file, you can run it headless with `node test.js` or if it requires dom elements or you just want to see it in browser you can run `budo test.js`and open your console.
 
 
-### GLSL shader compilation with [glslify](https://github.com/stackgl/glslify)
+### GLSL Shader Compilation with [glslify](https://github.com/stackgl/glslify)
 This isn't for everyone, but personally I do a lot of [WebGL](https://www.chromeexperiments.com/webgl) work and write a lot of GLSL Shaders. Using [glslify](https://github.com/stackgl/glslify) is the best solution I've found and provides a `require`-like system for GLSL code; a lot of which is available through NPM.
 
 
-### Providing variables to your [pug](http://pugjs.org) templates
+### Template Variables for [pug](http://pugjs.org)
 I typically will have a file such as `locals.json` that sits in my projects root and contains template variables. A variables file like this is a great way to do localization or to share data between both templates and javascript. If you want to do this, create the file and simply change `pug` and `pug-watch` to include `-O locals.json` in their arguments.
 
-### Client-side templates with [pugify](https://github.com/sidorares/pugify)
+### Client-side Templates with [pugify](https://github.com/sidorares/pugify)
 Your same templates you are serving can also be bundled into your javascript file for [client-side templating](https://www.smashingmagazine.com/2012/12/client-side-templating/).
 
 
-### starting projects quickly with [Sketchplate](http://haptic-data.com/sketchplate)
+### Starting Projects Quickly with [Sketchplate](http://haptic-data.com/sketchplate)
 This is my own open-source project, which currently only supports Mac. It is aimed towards starting projects very quickly and promotes maintaining your own templates for re-use. With [Sketchplate]http://github.com/hapticdata/sketchplate) you can get up and running in seconds. Just install the `sketch plate` command globally with `npm install -g sketchplate` then to install any template its as simple as `sketchplate template install <github_user>/<repo>`.
 
 If this article was _TL;DR_ you can get a new project up and running with this template in the following steps:
