@@ -40,7 +40,8 @@
     "garnish": "^2.3.0",
     "less": "^2.5.1",
     "ncp": "^2.0.0",
-    "pug": "^0.1.0"
+    "pug": "^2.0.0-beta6",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "devDependencies": {}
 }
